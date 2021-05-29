@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 '''
 Module with trie node and trie realization.
 '''
@@ -123,3 +124,25 @@ if comp == -1:
 elif comp == 0:
     print("No string found with this prefix\n")
  
+=======
+class Trie:
+    def __init__(self) -> None:
+        self.children = {}
+        self.end_of_word = False
+        self.weight = -1
+
+    def add(self, item, weight) -> None:
+        i = 0
+        while i < len(item):
+            k = item[i]
+            if not k in self.next:
+                node = Trie()
+                self.next[k] = node
+            self = self.next[k]
+            if i == len(item) - 1: 
+                self.end_of_word = True
+                self.weight = weight
+            else:
+                self.end_of_word = False
+            i += 1
+>>>>>>> c1639826d92e5c9f684cb20a594d70b1b8e66943
